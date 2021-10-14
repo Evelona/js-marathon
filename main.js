@@ -22,6 +22,7 @@ const secondPlayer = {
 firstPlayer.attack()
 
 // Task #1
+const $arenas = document.querySelector('div.arenas')
 const createPlayer = (playerClass, player) => {
     const $player = document.createElement('div')
     $player.classList.add(playerClass)
@@ -34,7 +35,7 @@ const createPlayer = (playerClass, player) => {
 
     const $life = document.createElement('div')
     $life.classList.add('life')
-    $life.style.width=`100%`
+    $life.style.width=`${player.hp}%`
     const $name = document.createElement('div')
     $name .classList.add('name')
     $name.innerHTML = player.name
@@ -50,7 +51,7 @@ const createPlayer = (playerClass, player) => {
     $player.appendChild($character)
 
 
-    document.querySelector('div.arenas').appendChild($player)
+    $arenas.appendChild($player)
 }
 
 
